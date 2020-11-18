@@ -572,7 +572,7 @@ static int on_cmd_order_query(nw_ses *ses, rpc_pkg *pkg, json_t *params)
     json_t *orders = json_array();
     skiplist_t *order_list = market_get_order_list(market, user_id);
     log_trace("538-----------order_list->len-----");
-    log_trace("测试: %s", nw_sock_human_addr(&order_list));
+    log_trace("测试: %s", order_list);
     if (order_list == NULL) {
         json_object_set_new(result, "total", json_integer(0));
     } else {
